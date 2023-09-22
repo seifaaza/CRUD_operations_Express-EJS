@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+const middleware = require('./middleware')
+
 const port = 3000
 
 app.listen(port, _ => console.log(`App running on ${port}`))
@@ -13,8 +15,10 @@ let products = [
     { id: 5, name: 'DJI Mavic Air 2', price: 799.99 },
   ];
 
+app.use(middleware.loggingMiddleware)
+app.use(middleware.errorHandlingMiddleware)
 
-app.get('/products', (req, res) => res.send(products))
+app.get('/products', (req, res) => res.send(products).status(403))
 
 app.get('/products/:id', (req, res) => {
     const id = req.params.id
