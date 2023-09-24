@@ -6,10 +6,19 @@
     <div class="container mt-5">
       <div class="card mx-auto" style="max-width: 50%; max-height: 60%">
         <div class="row g-0">
-          <div class="card-body d-flex flex-column h-100">
-            <h5 class="card-title"><%= productItem.name %></h5>
-            <h3 class="card-title"><%= productItem.price %> MAD</h3>
-            <p class="card-text"><%= productItem.des %></p>
+          <div class="col-md-4">
+            <img
+              src="/<%=productItem.img %>"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body d-flex flex-column h-100">
+              <h5 class="card-title"><%= productItem.name %></h5>
+              <h3 class="card-title"><%= productItem.price %> MAD</h3>
+              <p class="card-text"><%= productItem.des %></p>
+            </div>
           </div>
         </div>
       </div>

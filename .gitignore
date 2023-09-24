@@ -1,2 +1,3 @@
-#Ignoring node modules folder
+#Ignoring node modules and public folder
 node_modules
+public
